@@ -6,7 +6,7 @@ import pandas as pd
 import json
 from openpyxl.workbook import Workbook
 
-URL = "https://www.goszakup.gov.kz/ru/registry/rqc?count_record=2000&page=1"
+URL = "https://www.goszakup.gov.kz/ru/registry/rqc?count_record=2000&page=1 "
 page = requests.get(URL, verify=False)
 file = 'final.xlsx'
 
@@ -28,7 +28,7 @@ for i in sup_elements:
         sup_URL = sup_URL["href"]
         # print(sup_URL)
     a = True
-    while a == True:
+    while a:
         try:
             page_sup = requests.get(sup_URL, verify=False)
             a = False
